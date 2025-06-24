@@ -29,3 +29,7 @@ Pillow (PIL): For image loading and manipulation - How To Install: Run "pip inst
 
 **You do not need this dependencies for the .exe file.**
 
+## How it Looks
+
+![Zoidberg App Screenshot](images/zoidberg_app_screenshot.png)
+
