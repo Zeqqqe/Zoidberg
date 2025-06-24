@@ -26,7 +26,9 @@ To run from any terminal location, right-click **System Path.bat** in the app fo
 
 ## Dependencies (Python Libraries):
 
-Pillow (PIL): For image loading and manipulation - How To Install: Run "pip install Pillow" In Command Prompt. (Without Quotes)
+Pillow (PIL): For image loading and manipulation - How To Install: Run **"pip install Pillow"** In Command Prompt. (Without Quotes)
+
+Pygame: For playing sound effects - How to install: Run **"pip install pygame"** In Command Prompt. (Without Quotes)
 
 **You do not need this dependencies for the .exe file.**
 
