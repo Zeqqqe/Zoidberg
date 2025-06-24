@@ -1,3 +1,5 @@
+­(**This app was made with AI**, Google Gemini to be exact.)
+
 ## Zoidberg App
 A simple desktop app displaying a customizable Zoidberg image. 
 
@@ -24,3 +26,6 @@ To run from any terminal location, right-click **System Path.bat** in the app fo
 ## Dependencies (Python Libraries):
 
 Pillow (PIL): For image loading and manipulation - How To Install: Run "pip install Pillow" In Command Prompt. (Without Quotes)
+
+**You do not need this dependencies for the .exe file.**
+
