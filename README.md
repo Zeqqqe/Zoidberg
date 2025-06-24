@@ -31,5 +31,5 @@ Pillow (PIL): For image loading and manipulation - How To Install: Run "pip inst
 
 ## How it Looks
 
-![Zoidberg App Screenshot](images/zoidberg_app_screenshot.png)
+![Zoidberg App Screenshot](zoidberg_app_screenshot.png)
 
