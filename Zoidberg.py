@@ -8,14 +8,23 @@ import sys
 import argparse
 
 # --- Color Utility Functions (Placed outside the class for reusability) ---
-def hex_to_rgb(hex_color):
-    """Converts a hex color string (e.g., '#RRGGBB') to an RGB tuple (R, G, B)."""
-    # Ensure it's a string, strip leading/trailing whitespace, and remove '#' if present
-    hex_color = str(hex_color).strip().lstrip('#')
-    if len(hex_color) != 6:
-        # Fallback to a default if the hex is malformed after stripping
-        return (0, 0, 0) # Black
-    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+def get_rgb_from_color_string(widget, color_string):
+    """
+    Converts a color string (name or hex) to an RGB tuple (0-255 range).
+    Uses Tkinter's winfo_rgb for robustness with color names.
+    Args:
+        widget: A Tkinter widget (e.g., root window or canvas) to call winfo_rgb on.
+        color_string: The color name (e.g., "red", "darkblue") or hex code (e.g., "#RRGGBB").
+    Returns:
+        An RGB tuple (R, G, B) where each component is 0-255. Defaults to black if invalid.
+    """
+    try:
+        # winfo_rgb returns 16-bit values, so divide by 256 for 8-bit (0-255)
+        r, g, b = widget.winfo_rgb(color_string)
+        return (r // 256, g // 256, b // 256)
+    except tk.TclError:
+        # If winfo_rgb fails (invalid color name or malformed hex), fallback to black
+        return (0, 0, 0) # Default to black if all else fails
 
 def rgb_to_hex(rgb_tuple):
     """Converts an RGB tuple (R, G, B) to a hex color string (e.g., '#RRGGBB')."""
@@ -105,6 +114,7 @@ class ZoidbergApp:
     def _parse_and_apply_command_line_args(self):
         """
         Parses command-line arguments and applies them, overriding config settings.
+        Gradient arguments take precedence over solid background if both are provided.
         """
         parser = argparse.ArgumentParser(
             description="Launch Zoidberg application with custom settings."
@@ -134,7 +144,6 @@ class ZoidbergApp:
             help="Set the second gradient color."
         )
 
-        # NEW: Argument for text color
         parser.add_argument(
             "-tc", "--text-color",
             type=str,
@@ -143,21 +152,26 @@ class ZoidbergApp:
 
         args = parser.parse_args()
 
+        # Apply text if provided
         if args.text:
             self.display_text = args.text
-            self.background_type = "solid"
 
-        if args.background_color:
-            self.background_type = "solid"
-            self.background_color = args.background_color
-        elif args.gradient_color1 and args.gradient_color2:
+        # Apply text color if provided
+        if args.text_color:
+            self.text_color = args.text_color
+
+        # Determine background type and colors based on command-line arguments
+        # Gradient arguments take precedence if both are given.
+        if args.gradient_color1 and args.gradient_color2:
             self.background_type = "gradient"
             self.gradient_start_color = args.gradient_color1
             self.gradient_end_color = args.gradient_color2
-
-        # NEW: Apply text color if provided
-        if args.text_color:
-            self.text_color = args.text_color
+        elif args.background_color:
+            self.background_type = "solid"
+            self.background_color = args.background_color
+        # If neither explicit background argument is provided,
+        # the background_type and colors will remain as loaded from config.ini,
+        # which is the desired fallback.
 
 
     def _sanitize_config_value(self, value_string):
@@ -202,10 +216,10 @@ class ZoidbergApp:
                 'text_color': "#c5d8ed"
             }
             self.config['Background'] = {
-                'type': 'solid',
+                'type': 'gradient', # Changed default to gradient to demonstrate
                 'color': '#1a0c11',
-                'start_color': '#c93047',
-                'end_color': '#290b0f'
+                'start_color': '#87CEEB', # Lighter blue for better contrast
+                'end_color': '#4682B4'   # Steel blue for clear gradient
             }
             config_modified = True
             messagebox.showinfo("Config Created", f"'{self.config_file}' was not found and has been created with default settings.\n"
@@ -224,10 +238,10 @@ class ZoidbergApp:
 
             if not self.config.has_section('Background'):
                 self.config['Background'] = {
-                    'type': 'solid',
+                    'type': 'gradient', # Default to gradient
                     'color': '#1a0c11',
-                    'start_color': '#c93047',
-                    'end_color': '#290b0f'
+                    'start_color': '#87CEEB', # Lighter blue
+                    'end_color': '#4682B4'   # Steel blue
                 }
                 config_modified = True
 
@@ -239,8 +253,8 @@ class ZoidbergApp:
         self.text_color = self._sanitize_config_value(self.config.get('Settings', 'text_color', fallback="#1a1a1a"))
         self.background_type = self._sanitize_config_value(self.config.get('Background', 'type', fallback='solid'))
         self.background_color = self._sanitize_config_value(self.config.get('Background', 'color', fallback='#F0F0F0'))
-        self.gradient_start_color = self._sanitize_config_value(self.config.get('Background', 'start_color', fallback='#ffe7d4'))
-        self.gradient_end_color = self._sanitize_config_value(self.config.get('Background', 'end_color', fallback='#c93047'))
+        self.gradient_start_color = self._sanitize_config_value(self.config.get('Background', 'start_color', fallback='#ADD8E6'))
+        self.gradient_end_color = self._sanitize_config_value(self.config.get('Background', 'end_color', fallback='#87CEEB'))
 
 
     def _write_config_with_comments(self):
@@ -255,15 +269,15 @@ class ZoidbergApp:
 
             f.write('[Background]\n')
             f.write(f'type = {self.config.get("Background", "type")}\n')
+            f.write('; To use a solid background, change \'type\' to \'solid\' and adjust \'color\':\n')
             f.write(f'color = {self.config.get("Background", "color")}\n')
-            f.write('; Default Maroon Background Color\n')
+            f.write('; Default Maroon Background Color (used if type = solid)\n')
             f.write('\n')
-            f.write('; To use a gradient background, change \'type\' to \'gradient\' and optionally adjust colors:\n')
-            f.write('; type = gradient\n')
+            f.write('; For gradient background, ensure \'type\' is \'gradient\' and adjust colors:\n')
             f.write(f'start_color = {self.config.get("Background", "start_color")}\n')
-            f.write('; Zoidbergish Red\n')
+            f.write('; Light Blue (Start of Gradient)\n')
             f.write(f'end_color = {self.config.get("Background", "end_color")}\n')
-            f.write('; Zoidbergish Dark Red\n')
+            f.write('; Steel Blue (End of Gradient)\n')
 
 
     def _on_resize_debounced(self, event):
@@ -296,11 +310,11 @@ class ZoidbergApp:
         if self.background_type == 'solid':
             self.canvas.config(bg=self.background_color)
         elif self.background_type == 'gradient':
-            self.canvas.config(bg=self.gradient_start_color)
+            # Use the new robust color conversion for gradient colors
+            start_rgb = get_rgb_from_color_string(self.master, self.gradient_start_color)
+            end_rgb = get_rgb_from_color_string(self.master, self.gradient_end_color)
 
-            start_rgb = hex_to_rgb(self.gradient_start_color)
-            end_rgb = hex_to_rgb(self.gradient_end_color)
-
+            # Create gradient rectangles
             for i in range(canvas_height):
                 ratio = i / (canvas_height - 1) if canvas_height > 1 else 0
                 interpolated_rgb = interpolate_color(start_rgb, end_rgb, ratio)
@@ -315,10 +329,13 @@ class ZoidbergApp:
         # --- Draw Zoidberg Image ---
         original_width, original_height = self.original_zoidberg_pil.size
 
+        # Calculate scale factor for the image to fit, and then reduce it slightly
+        # to ensure more background is visible around Zoidberg.
         width_scale = canvas_width / original_width
         height_scale = canvas_height / original_height
 
-        scale_factor = min(width_scale, height_scale)
+        # Use 85% of the fitting scale to leave some margin
+        scale_factor = min(width_scale, height_scale) * 0.85 # Typo fixed here: height_height -> height_scale
 
         new_width = int(original_width * scale_factor)
         new_height = int(original_height * scale_factor)
@@ -356,7 +373,7 @@ class ZoidbergApp:
         self.canvas_text_id = self.canvas.create_text(final_text_x, final_text_y,
                                                      text=self.display_text,
                                                      font=font_style,
-                                                     fill=self.text_color, # Use self.text_color here
+                                                     fill=self.text_color,
                                                      anchor=tk.CENTER,
                                                      width=text_wrap_width_pixels)
 
