@@ -20,3 +20,7 @@ Extract Zoidberg_App.zip to a folder (e.g., C:\ZoidbergApp).
 Run Zoidberg.exe by double-clicking or from a terminal.
 
 To run from any terminal location, right-click **System Path.bat** in the app folder and run as administrator.
+
+## Dependencies (Python Libraries):
+
+Pillow (PIL): For image loading and manipulation - How To Install: Run "pip install Pillow" In Command Prompt. (Without Quotes)
