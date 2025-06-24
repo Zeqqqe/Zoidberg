@@ -17,7 +17,7 @@ Override config.ini settings for a single session, Use quotes for multi-word tex
  / --background-color "Color": Sets solid background color.-bgg1 "Color1" / -bgg2 "Color2": Sets gradient start/end colors (both required)
 
 ## Setup & Running:
-Extract Zoidberg_App.zip to a folder (e.g., C:\ZoidbergApp).
+Extract Zoidberg.zip to a folder (C:\ZoidbergApp Required for the **Path.bat** files to work).
 
 Run Zoidberg.exe by double-clicking or from a terminal.
 
