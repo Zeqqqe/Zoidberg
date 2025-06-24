@@ -29,7 +29,22 @@ Pillow (PIL): For image loading and manipulation - How To Install: Run "pip inst
 
 **You do not need this dependencies for the .exe file.**
 
+
+## Requirements
+
+**Operating System:** Windows (Compiled for Windows).
+
+## Troubleshooting
+
+**"Image not found" Error:** Ensure the main Zoidberg image *(Zoidberg 324.png)* is located in a subfolder named Zoidberg/ right next to your Zoidberg.exe file.
+For example: **C:\ZoidbergApp\Zoidberg\Zoidberg 324.png.**
+
+**"Config Created" Repeatedly:** config.ini might be missing or misplaced; ensure it's with Zoidberg.exe.
+
+**Command-line Arguments Not Working:** Check quotes for multi-word/color values, and ensure you're using a new terminal window after PATH changes.
+
+**Antivirus Warnings:** Compiled .exe files can be flagged. If this occurs, you may need to add an exception for Zoidberg.exe in your antivirus settings.
+
 ## How it Looks
 
 ![Zoidberg App Screenshot](zoidberg_app_screenshot.png)
-
