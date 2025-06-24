@@ -18,7 +18,7 @@ Override config.ini settings for a single session, Use quotes for multi-word tex
 
 
 ## Setup & Running:
-Extract Zoidberg.zip to a folder (C:\ZoidbergApp Required for the **Path.bat** files to work).
+Extract Zoidberg.App.zip to a folder (C:\ZoidbergApp Required for the **Path.bat** files to work).
 
 Run Zoidberg.exe by double-clicking or from a terminal.
 
@@ -42,7 +42,8 @@ For example: **C:\ZoidbergApp\Zoidberg\Zoidberg 324.png.**
 
 **"Config Created" Repeatedly:** config.ini might be missing or misplaced; ensure it's with Zoidberg.exe.
 
-**Command-line Arguments Not Working:** Check quotes for multi-word/color values, and ensure you're using a new terminal window after PATH changes.
+**Command-line Arguments Not Working:** Check quotes for multi-word/color values, and ensure you're using a new terminal window after PATH changes. 
+
 
 **Antivirus Warnings:** Compiled .exe files can be flagged. If this occurs, you may need to add an exception for Zoidberg.exe in your antivirus settings.
 
