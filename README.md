@@ -1,6 +1,6 @@
 ­(**This app was made with AI**, Google Gemini to be exact.)
 
-## Zoidberg App
+# Zoidberg App
 A simple desktop app displaying a customizable Zoidberg image. 
 
 ## Configuration - config.ini: 
@@ -65,6 +65,10 @@ This sets text to "The shadows awaken...", text color to silver/gray, and a grad
 
 **"Alien Mode" Command:** 
 Zoidberg.exe -t "Woop woop woop!" -tc "#6f47ff" -s -ls "Woop woop woop!.mp3" -sho 90.0 -bg "#c93047"
+
+## Visuals
+
+Visit the **[Gallery](https://github.com/ackozu/Zoidberg/wiki/Gallery)** to view how the Zoidberg App looks.
 
 
 
