@@ -67,7 +67,4 @@ This sets text to "The shadows awaken...", text color to silver/gray, and a grad
 Zoidberg.exe -t "Woop woop woop!" -tc "#6f47ff" -s -ls "Woop woop woop!.mp3" -sho 90.0 -bg "#c93047"
 
 
-## How it Looks
 
-
-![Zoidberg App Screenshot](zoidberg_app_screenshot.png)
