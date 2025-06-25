@@ -63,7 +63,7 @@ Zoidberg.exe -t "The shadows awaken..." -tc "#c0c0c0" -bgg1 "#1a0a2e" -bgg2 "#0a
 
 This sets text to "The shadows awaken...", text color to silver/gray, and a gradient from dark purple to black.
 
-**"Allien Mode" Command:** 
+**"Alien Mode" Command:** 
 Zoidberg.exe -t "Woop woop woop!" -tc "#6f47ff" -s -ls "Woop woop woop!.mp3" -sho 90.0 -bg "#c93047"
 
 
