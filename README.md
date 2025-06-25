@@ -66,6 +66,9 @@ This sets text to "The shadows awaken...", text color to silver/gray, and a grad
 **"Alien Mode" Command:** 
 Zoidberg.exe -t "Woop woop woop!" -tc "#6f47ff" -s -ls "Woop woop woop!.mp3" -sho 90.0 -bg "#c93047"
 
+## Drag & Drop Config:
+Drop a .ini file onto the app to launch with it's settings.
+
 ## Visuals
 
 Visit the **[Gallery](https://github.com/ackozu/Zoidberg/wiki/Gallery)** to view how the Zoidberg App looks.
