@@ -40,8 +40,8 @@ Pygame: For playing sound effects - How to install: Run **"pip install pygame"**
 
 ## Troubleshooting
 
-**"Image not found" Error:** Ensure the main Zoidberg image *(Zoidberg 324.png)* is located in a subfolder named Zoidberg/ right next to your Zoidberg.exe file.
-For example: **C:\ZoidbergApp\Zoidberg\Zoidberg 324.png.**
+**"Image not found" Error:** Ensure the main Zoidberg image *(Zoidberg Icon.png)* is located in a subfolder named Zoidberg/ right next to your Zoidberg.exe file.
+For example: **C:\ZoidbergApp\Zoidberg\Zoidberg Icon.png.**
 
 **"Config Created" Repeatedly:** config.ini might be missing or misplaced; ensure it's with Zoidberg.exe.
 
