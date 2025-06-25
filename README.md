@@ -51,7 +51,7 @@ For example: **C:\ZoidbergApp\Zoidberg\Zoidberg Icon.png.**
 **Antivirus Warnings:** Compiled .exe files can be flagged. If this occurs, you may need to add an exception for Zoidberg.exe in your antivirus settings.
 
 
-## Unsettling Command Line Arguements
+## Command-Line Arguements
 
 **"Weird Mode" Command:** 
 Zoidberg.exe -t "All Glory to the Hypnotoad!" -tc "#FF0000" -bgg1 "#00FF00" -bgg2 "#FF00FF"
@@ -65,6 +65,8 @@ This sets text to "The shadows awaken...", text color to silver/gray, and a grad
 
 **"Alien Mode" Command:** 
 Zoidberg.exe -t "Woop woop woop!" -tc "#6f47ff" -s -ls "Woop woop woop!.mp3" -sho 90.0 -bg "#c93047"
+
+**[More Command-Line Arguments](https://github.com/ackozu/Zoidberg/wiki/Gallery)** 
 
 ## Drag & Drop Config:
 Drop a .ini file onto the app to launch with it's settings.
