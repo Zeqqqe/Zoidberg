@@ -9,18 +9,19 @@ A simple desktop app displaying a customizable Zoidberg image.
 ## Command-Line Arguments: 
 Override config.ini settings for a single session, Use quotes for multi-word text or colors.
 
+**-t "Text" / --text "Text":** Sets display text.-tc "Color"
 
--t "Text" / --text "Text": Sets display text.-tc "Color"
+ **--text-color "Color" / -tc "Color":** Sets text color. -bg "Color"
 
- --text-color "Color": Sets text color.-bg "Color"
+ **/ --background-color "Color":** Sets solid background color. -bgg1 "Color1" / -bgg2 "Color2": Sets gradient start/end colors (both required)
 
- / --background-color "Color": Sets solid background color. -bgg1 "Color1" / -bgg2 "Color2": Sets gradient start/end colors (both required)
+**-sho <offset_value> / --static-hue-offset <offset_value>:** Sets the hue shifting amount, 0 to 360.
 
 
 ## Setup & Running:
-Extract Zoidberg.App.zip to a folder (C:\ZoidbergApp Required for the **Path.bat** files to work).
+Extract **Zoidberg.App.zip** to a folder (C:\ZoidbergApp Required for the **Path.bat** files to work).
 
-Run Zoidberg.exe by double-clicking or from a terminal.
+Run **Zoidberg.exe** by double-clicking or from a terminal.
 
 To run from any terminal location, right-click **System Path.bat** in the app folder and run as administrator.
 
