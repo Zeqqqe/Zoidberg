@@ -31,7 +31,7 @@ Pillow (PIL): For image loading and manipulation - How To Install: Run **"pip in
 
 Pygame: For playing sound effects - How to install: Run **"pip install pygame"** In Command Prompt. (Without Quotes)
 
-**You do not need this dependencies for the .exe file.**
+**You do not need these dependencies for the .exe file.**
 
 
 ## Requirements
