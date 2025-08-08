@@ -1,5 +1,3 @@
-**This app was made with AI**, Google Gemini to be exact.
-
 # Zoidberg App
 A simple desktop app displaying a customizable Zoidberg image.
 
@@ -56,10 +54,12 @@ Override `config.ini` settings for a single session. Use quotes for multi-word t
 
 ##### **"Alien Mode" Command:**
 `Zoidberg.exe -t "Woop woop woop!" -tc "#6f47ff" -s -ls "Woop woop woop!.mp3" -sho 90.0 -bg "#c93047"`
-* **Description:** You can find more details on this and other arguments in the [More Command-Line Arguments](https://github.com/ackozu/Zoidberg/wiki/Gallery) link.
+* **Description:** You can find more details on these and other arguments in [**Command-Line Arguments**](https://github.com/ackozu/Zoidberg/wiki/Gallery)
 
 ## Drag & Drop Config:
 * Drop a `.ini` file onto the app to launch with its settings.
 
 ## Visuals
 * Visit the **[Gallery](https://github.com/ackozu/Zoidberg/wiki/Gallery)** to see how the Zoidberg App looks.
+
+###### **This app was made with AI**, Google Gemini to be exact.
