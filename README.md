@@ -14,7 +14,6 @@ Override `config.ini` settings for a single session. Use quotes for multi-word t
 | `Zoidberg.exe --background-color "Color"` | `-bg "Color"` | Sets solid background color. |
 | `Zoidberg.exe --background-gradient1 "Color1"` and `Zoidberg.exe --background-gradient2 "Color2"` | `-bgg1 "Color1"` and `-bgg2 "Color2"` | Sets gradient start/end colors (both required). |
 | `Zoidberg.exe --static-hue-offset <offset_value>` | `-sho <offset_value>` | Sets the hue shifting amount, 0 to 360. |
-| `Zoidberg.exe --static-hue-offset <offset_value>` | `-sho <offset_value>` | Sets the hue shifting amount, 0 to 360. |
 
 ## Setup & Running:
 * Extract **`Zoidberg.App.zip`** to a folder (e.g., `C:\ZoidbergApp`). This is required for the `Path.bat` files to work.
