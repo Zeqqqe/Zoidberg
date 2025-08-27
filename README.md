@@ -59,6 +59,7 @@ Override `config.ini` settings for a single session. Use quotes for multi-word t
 * Drop a `.ini` file onto the app to launch with its settings.
 
 ## Visuals
-* Visit the **[Gallery](https://github.com/ackozu/Zoidberg/wiki/Gallery)** to see how the Zoidberg App looks.
+[![Visuals of Zoidberg](https://raw.githubusercontent.com/Zwarb/Zoidberg/refs/heads/main/zoidberg_app_screenshot.png)](https://github.com/Zwarb/Zoidberg/wiki/Gallery)
+* Visit the [Gallery](https://github.com/Zwarb/Zoidberg/wiki/Gallery) to see more visuals.
 
 ###### **This app was made with AI**, Google Gemini to be exact.
