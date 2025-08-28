@@ -16,7 +16,7 @@ Override `config.ini` settings for a single session. Use quotes for multi-word t
 | `Zoidberg.exe --static-hue-offset <offset_value>` | `-sho <offset_value>` | Sets the hue shifting amount, 0 to 360. |
 
 ## Setup & Running:
-* Extract **`Zoidberg.App.zip`** to a folder (e.g., `C:\ZoidbergApp`). This is required for the `Path.bat` files to work.
+* Extract **`Zoidberg.App.zip`** to a folder (e.g., `C:\ZoidbergApp`, This is required for the `Path.bat` files to work.)
 * Run **`Zoidberg.exe`** by double-clicking or from a terminal.
 * To run from any terminal location, right-click **`System Path.bat`** in the app folder and run as administrator.
 
