@@ -232,7 +232,7 @@ Override `config.ini` settings for a single session. Use quotes for multi-word t
 * Drop a `.ini` file onto the app to launch with its settings.
 
 ## Visuals
-[![Visuals of Zoidberg](https://raw.githubusercontent.com/Zwarb/Zoidberg/refs/heads/main/zoidberg_app_screenshot.png)](https://github.com/Zwarb/Zoidberg/wiki/Gallery)
+[![Visuals of Zoidberg](https://raw.githubusercontent.com/Zwarb/Zoidberg/refs/heads/main/zoidberg_app_screenshot.png)](https://github.com/Zalgoo/Zoidberg/wiki/Gallery)
 * Visit the [Gallery](https://github.com/Zwarb/Zoidberg/wiki/Gallery) to see more visuals.
 
 
