@@ -239,7 +239,7 @@ Override `config.ini` settings for a single session. Use quotes for multi-word t
 <details>
   <summary>Misc Info</summary>
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Zwarb/Zoidberg&type=Date)](https://www.star-history.com/#asgeirtj/system_prompts_leaks&Date)
+![Star History Chart](https://api.star-history.com/svg?repos=Zalgoo/Zoidberg&type=Date)
 
 
 <details>
